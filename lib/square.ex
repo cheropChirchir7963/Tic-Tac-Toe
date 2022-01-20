@@ -1,9 +1,10 @@
 defmodule TicTacToe.Square do
   alias __MODULE__
+  alias TicTacToe.Board
 
-  @board_size 3
+  @board_size Board.board_size()
   @enforce_keys [:pos]
-  @max_pos @board_size * @board_size
+  @max_pos Board.max_size()
 
   defstruct [:x, :y, :val, :pos ]
 
