@@ -4,7 +4,7 @@ defmodule TicTacToe.Square do
 
   @board_size Board.board_size()
   @enforce_keys [:pos]
-  @max_pos Board.max_size()
+  @max_pos Board.max_pos()
 
   defstruct [:x, :y, :val, :pos ]
 
