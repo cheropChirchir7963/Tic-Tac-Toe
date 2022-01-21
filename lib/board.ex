@@ -11,6 +11,20 @@ defmodule TicTacToe.Board do
   defstruct [squares: []]
 
   def new do
-    Enum.map(1..@max_pos, &Square.new/1)
+    %Board{squares: Enum.map(1..@max_pos, &Square.new/1)}
+  end
+
+
+  def print(%Board{squares: squares}) do
+    squares
+  |> Enum.chunk_every(3)
+  |> Enum.each(&print_line/1)
+  end
+
+  def print_line(squares) do
+    squares
+    |> Enum.map(fn s -> s.val end)
+    |> Enum.join(" | ")
+    |> IO.puts()
   end
 end
