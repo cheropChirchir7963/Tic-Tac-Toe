@@ -22,6 +22,7 @@ defmodule TicTacToe.Board do
   end
 
   def print_line(squares) do
+    if (hd squares).y > 1, do: IO.puts("---------")
     squares
     |> Enum.map(fn s -> s.val end)
     |> Enum.join(" | ")

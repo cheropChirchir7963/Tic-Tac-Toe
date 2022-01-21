@@ -9,7 +9,7 @@ defmodule TicTacToe.Square do
   defstruct [:x, :y, :val, :pos ]
 
   def new(pos) when pos > 0 and pos <= @max_pos do
-    %TicTacToe.Square{pos: pos, y: y(pos), x: x(pos)}
+    %TicTacToe.Square{pos: pos, y: y(pos), x: x(pos), val: :x}
   end
 
   def x(%Square{pos: pos}), do: x(pos)
