@@ -22,10 +22,13 @@ defmodule TicTacToe.Board do
   end
 
   def print_line(squares) do
-    if (hd squares).y > 1, do: IO.puts("---------")
+    if (hd squares).y > 1, do: IO.puts("-----------")
     squares
-    |> Enum.map(fn s -> s.val end)
+    |> Enum.map(fn s -> s.val || " " end)
     |> Enum.join(" | ")
+    |> pad()
     |> IO.puts()
   end
+
+  def pad(str), do: " " <> str <> " "
 end
